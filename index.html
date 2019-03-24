@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>How Much Cous Cous</title>
+
+<meta name="description" content="Calculate how much food you need to take on your next hiking/climbing trip.">
+<meta property="og:site_name" content="How Much Cous Cous">
+<meta property="og:type" content="website">
+<meta property="og:title" content="How Much Cous Cous">
+<meta property="og:description" content="Calculate how much food you need to take on your next hiking/climbing trip.">
+<meta property="og:url" content="/">
+<meta name="twitter:title" content="How Much Cous Cous">
+<meta name="twitter:description" content="Calculate how much food you need to take on your next hiking/climbing trip.">
+<meta name="twitter:url" content="/">
+
+<style>
+	body {
+		font-family: Verdana;
+		background-image: url("bg.jpg");
+		background-repeat: no-repeat;
+		background-size: cover;
+		width: 700px;
+		margin: auto;
+	}
+	@media screen and (max-width: 750px) {
+		body {
+			width: 90%;
+		}
+	}
+	.center {
+		width: 300px;
+		margin: auto;
+	}
+</style>
+</head>
+<body onload="calc()">
+	<h1>Camping Food Calculator</h1>
+	<p>Use this tool to calculate how much cous cous, oats and parmesan to pack for your camping trip. If you're car camping, or weight doesn't matter, take tastier stuff. If you're going light and weight (and gas weight) matters, use this.</p>
+	<div class="center">
+	<form>
+		<label for="days"><strong>Number of days*:</strong></label><br>
+		<input type="text" size="2" name="days" id="days" value="3">
+		<button type="button" onclick="calc()">Update</button>
+	</form>
+	<br>
+	<table>
+		<tr><th>Dinner</th></tr>
+		<tr><td>Cous cous</td><td id="couscous"></td></tr>
+		<tr><td>Olive oil</td><td id="olive"</td></tr>
+		<tr><td>Parmesan</td><td id="parmesan"</td></tr>
+		<tr><th>Lunch</th></tr>
+		<tr><td>50g bars</td><td id="bars"</td></tr>
+		<tr><td>Raisins</td><td id="raisins"</td></tr>
+		<tr><td>Peanuts</td><td id="peanuts"</td></tr>
+		<tr><td>Sunflower seeds</td><td id="sunflower"</td></tr>
+		<tr><th>Breakfast</th></tr>
+		<tr><td>Oats</td><td id="oats"</td></tr>
+		<tr><td>Milk powder</td><td id="milk"</td></tr>
+	</table>
+	</div>
+	<p>Ditch the milk powder if it's not your thing. Mix about 1/3 of your raisins into your oats, and feel free to substitute another dried fruit. Don't forget to take salt and pepper. Pro tip: pack all of these into sealable plastic bags so you're not carrying trash around with you.</p>
+	<p>*Including first and last. It is assumed that no breakfast is needed for the first day, and no dinner is needed for the last.</p>
+
+	<script>
+		const items = {
+			"couscous": {"amnt": 130, "type": "dinner", "unit": "g"},
+			"olive": {"amnt": 80, "type": "dinner", "unit": "ml"},
+			"parmesan": {"amnt": 30, "type": "dinner", "unit": "g"},
+			"bars": {"amnt": 3, "type": "lunch", "unit": "units"},
+			"raisins": {"amnt": 30, "type": "lunch", "unit": "g"},
+			"peanuts": {"amnt": 20, "type": "lunch", "unit": "g"},
+			"sunflower": {"amnt": 10, "type": "lunch", "unit": "g"},
+			"oats": {"amnt": 100, "type": "breakfast", "unit": "g"},
+			"milk": {"amnt": 20, "type": "breakfast", "unit": "g"},
+		}
+
+		function calc() {
+			let days = document.getElementById("days").value;
+
+			for (let name in items) {
+				let amnt = items[name].amnt;
+				let type = items[name].type;
+				let unit = items[name].unit;
+				let use_days = days;
+				if (type == "dinner" || type == "breakfast") use_days -= 1;
+
+				document.getElementById(name).innerHTML = use_days * amnt + " " + unit;
+			}
+
+		}
+	</script>
+</body>
+</html>
