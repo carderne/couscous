@@ -17,8 +17,11 @@
 <style>
 	body {
 		font-family: Verdana;
-		background-image: url("bg.jpg");
+		background-image: url(bg.jpg);
 		background-repeat: no-repeat;
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		-o-background-size: cover;
 		background-size: cover;
 		width: 700px;
 		margin: auto;
@@ -27,21 +30,23 @@
 		body {
 			width: 90%;
 		}
+		.center {
+			width: 50%;
+		}
 	}
 	.center {
-		width: 300px;
+		width: 50%;
 		margin: auto;
 	}
 </style>
 </head>
 <body onload="calc()">
-	<h1>Camping Food Calculator</h1>
-	<p>Use this tool to calculate how much cous cous, oats and parmesan to pack for your camping trip. If you're car camping, or weight doesn't matter, take tastier stuff. If you're going light and weight (and gas weight) matters, use this.</p>
+	<h1>How Much Cous Cous</h1>
+	<p>Use this to calculate how much cous cous, oats and parmesan to pack for your camping trip. Use this for delicious food when weight and simplicity matter.</p>
 	<div class="center">
 	<form>
-		<label for="days"><strong>Number of days*:</strong></label><br>
-		<input type="text" size="2" name="days" id="days" value="3">
-		<button type="button" onclick="calc()">Update</button>
+		<label for="days"><strong>Days*:   </strong></label>&nbsp;
+		<input type="text" size="5" style="" name="days" id="days" value="3" oninput="calc()">
 	</form>
 	<br>
 	<table>
@@ -76,7 +81,8 @@
 		}
 
 		function calc() {
-			let days = document.getElementById("days").value;
+			let days = parseInt(document.getElementById("days").value) || 0;
+			if (days < 1) days = 1;
 
 			for (let name in items) {
 				let amnt = items[name].amnt;
