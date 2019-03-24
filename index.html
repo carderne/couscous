@@ -15,7 +15,11 @@
 <meta name="twitter:url" content="/">
 
 <style>
-	body {
+	* {
+		margin: 10;
+		padding: 10;
+	}
+	html {
 		font-family: Verdana;
 		background-image: url(bg.jpg);
 		background-repeat: no-repeat;
@@ -23,20 +27,34 @@
 		-moz-background-size: cover;
 		-o-background-size: cover;
 		background-size: cover;
+	}
+	body {
 		width: 700px;
 		margin: auto;
 	}
 	@media screen and (max-width: 750px) {
 		body {
-			width: 90%;
+			width: 100%;
 		}
 		.center {
-			width: 50%;
+			width: 100%;
 		}
 	}
 	.center {
 		width: 50%;
 		margin: auto;
+	}
+	table {
+		border-spacing: 30px 0;
+	}
+	input {
+		width: 70px;
+		padding: 4px 10px;
+		box-sizing: border-box;
+		border: 2px solid white;
+  		border-radius: 4px;
+  		font-size: 16px;
+  		background-color: white;
 	}
 </style>
 </head>
@@ -46,7 +64,7 @@
 	<div class="center">
 	<form>
 		<label for="days"><strong>Days*:   </strong></label>&nbsp;
-		<input type="text" size="5" style="" name="days" id="days" value="3" oninput="calc()">
+		<input type="text" size="5" name="days" id="days" value="3" oninput="calc()">
 	</form>
 	<br>
 	<table>
@@ -58,7 +76,7 @@
 		<tr><td>50g bars</td><td id="bars"</td></tr>
 		<tr><td>Raisins</td><td id="raisins"</td></tr>
 		<tr><td>Peanuts</td><td id="peanuts"</td></tr>
-		<tr><td>Sunflower seeds</td><td id="sunflower"</td></tr>
+		<tr><td>Other seeds</td><td id="seeds"</td></tr>
 		<tr><th>Breakfast</th></tr>
 		<tr><td>Oats</td><td id="oats"</td></tr>
 		<tr><td>Milk powder</td><td id="milk"</td></tr>
@@ -75,7 +93,7 @@
 			"bars": {"amnt": 3, "type": "lunch", "unit": "units"},
 			"raisins": {"amnt": 30, "type": "lunch", "unit": "g"},
 			"peanuts": {"amnt": 20, "type": "lunch", "unit": "g"},
-			"sunflower": {"amnt": 10, "type": "lunch", "unit": "g"},
+			"seeds": {"amnt": 10, "type": "lunch", "unit": "g"},
 			"oats": {"amnt": 100, "type": "breakfast", "unit": "g"},
 			"milk": {"amnt": 20, "type": "breakfast", "unit": "g"},
 		}
