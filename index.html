@@ -45,16 +45,23 @@
 		margin: auto;
 	}
 	table {
+		padding-top: 20px;
 		border-spacing: 30px 0;
 	}
+	label {
+		width: 90px;
+		float: left;
+		margin: 0 20px 0 0;
+	}
+	span {
+		display: block;
+		margin: 0 0 3px;
+		font-weight: bold;
+	}
 	input {
-		width: 70px;
-		padding: 4px 10px;
-		box-sizing: border-box;
-		border: 2px solid white;
-  		border-radius: 4px;
-  		font-size: 16px;
-  		background-color: white;
+		width: 90px;
+		border: 1px solid #000;
+		padding: 5px;
 	}
 </style>
 </head>
@@ -63,10 +70,15 @@
 	<p>Use this to calculate how much cous cous, oats and parmesan to pack for your camping trip. Use this for delicious food when weight and simplicity matter.</p>
 	<div class="center">
 	<form>
-		<label for="days"><strong>Days*:   </strong></label>&nbsp;
-		<input type="text" size="5" name="days" id="days" value="3" oninput="calc()">
+		<label for="people">
+			<span>People</span>
+			<input type="text" id="people" value=2 />
+		</label>
+		<label for="contact">
+			<span>Days*</span>
+			<input type="text" id="days" value=2 />
+		</label>
 	</form>
-	<br>
 	<table>
 		<tr><th>Dinner</th></tr>
 		<tr><td>Cous cous</td><td id="couscous"></td></tr>
@@ -99,8 +111,10 @@
 		}
 
 		function calc() {
-			let days = parseInt(document.getElementById("days").value) || 0;
+			let people = parseInt(document.getElementById("people").value) || 1
+			let days = parseInt(document.getElementById("days").value) || 1;
 			if (days < 1) days = 1;
+			if (people < 1) people = 1;
 
 			for (let name in items) {
 				let amnt = items[name].amnt;
@@ -109,7 +123,7 @@
 				let use_days = days;
 				if (type == "dinner" || type == "breakfast") use_days -= 1;
 
-				document.getElementById(name).innerHTML = use_days * amnt + " " + unit;
+				document.getElementById(name).innerHTML = use_days * people * amnt + " " + unit;
 			}
 
 		}
