@@ -46,7 +46,9 @@
 	}
 	table {
 		padding-top: 20px;
-		border-spacing: 30px 0;
+	}
+	.padleft {
+		padding-left: 50px;
 	}
 	label {
 		width: 90px;
@@ -72,26 +74,26 @@
 	<form>
 		<label for="people">
 			<span>People</span>
-			<input type="text" id="people" value=2 />
+			<input type="text" id="people" value=2 oninput="calc()">
 		</label>
 		<label for="contact">
 			<span>Days*</span>
-			<input type="text" id="days" value=2 />
+			<input type="text" id="days" value=2 oninput="calc()">
 		</label>
 	</form>
 	<table>
 		<tr><th>Dinner</th></tr>
-		<tr><td>Cous cous</td><td id="couscous"></td></tr>
-		<tr><td>Olive oil</td><td id="olive"</td></tr>
-		<tr><td>Parmesan</td><td id="parmesan"</td></tr>
+		<tr><td>Cous cous</td><td class="padleft" id="couscous"></td></tr>
+		<tr><td>Olive oil</td><td class="padleft" id="olive"</td></tr>
+		<tr><td>Parmesan</td><td class="padleft" id="parmesan"</td></tr>
 		<tr><th>Lunch</th></tr>
-		<tr><td>50g bars</td><td id="bars"</td></tr>
-		<tr><td>Raisins</td><td id="raisins"</td></tr>
-		<tr><td>Peanuts</td><td id="peanuts"</td></tr>
-		<tr><td>Other seeds</td><td id="seeds"</td></tr>
+		<tr><td>50g bars</td><td class="padleft" id="bars"</td></tr>
+		<tr><td>Raisins</td><td class="padleft" id="raisins"</td></tr>
+		<tr><td>Peanuts</td><td class="padleft" id="peanuts"</td></tr>
+		<tr><td>Other seeds</td><td class="padleft" id="seeds"</td></tr>
 		<tr><th>Breakfast</th></tr>
-		<tr><td>Oats</td><td id="oats"</td></tr>
-		<tr><td>Milk powder</td><td id="milk"</td></tr>
+		<tr><td>Oats</td><td class="padleft" id="oats"</td></tr>
+		<tr><td>Milk powder</td><td class="padleft" id="milk"</td></tr>
 	</table>
 	</div>
 	<p>Ditch the milk powder if it's not your thing. Mix about 1/3 of your raisins into your oats, and feel free to substitute another dried fruit. Don't forget to take salt and pepper. Pro tip: pack all of these into sealable plastic bags so you're not carrying trash around with you.</p>
