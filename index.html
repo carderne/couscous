@@ -55,7 +55,8 @@
 	
 	.ttip {
 		position: relative;
-		display: inline-block;
+		text-decoration: underline;
+		text-decoration-style: dotted;
 	}
 	
 	.ttiptext {
@@ -97,7 +98,7 @@
 </head>
 <body onload="calc()">
 	<h2>How Much Couscous</h2>
-	<p>Couscous and oats are the best for climbing and hiking when weight and simplicity matter. Just ask <a href="https://vimeo.com/groups/endlessoutdooradventure/videos/32746681">these badasses</a>. This calculator will tell you how much to take. Couscous and oats are delicious, but if weight doesn't matter as much, follow your heart and ignore this calculator.</p>
+	<p>Couscous and oats are the best for climbing and hiking when weight and simplicity matter. Just ask <a href="https://vimeo.com/groups/endlessoutdooradventure/videos/32746681">these badasses</a>. This calculator will tell you how much to take. Couscous and oats are delicious, but if weight doesn't matter as much, follow your heart and ignore this calculator. Hover/tap the dotted underlined bits for more information.</p>
 	<div class="main">
 		<div class="selectors">
 			<select id="people" onchange="calc()">
@@ -125,14 +126,14 @@
 		</div>
 		<div>
 			<span ontouchstart class="ttip"><strong>Dinner</strong>
-			<span class="ttiptext"><strong>Instructions:</strong> Boil up water (1:1 with couscous) with salt and olive oil. Once boiling, throw in couscous and sliced parmesan, cover, and remote heat. Leave covered for five minutes then enjoy.</span></span>
+				<span class="ttiptext"><strong>Instructions:</strong> Boil up water (1:1 with couscous) with salt and olive oil. Once boiling, throw in couscous and sliced parmesan, cover, and remote heat. Leave covered for five minutes then enjoy.<ul><li>130g couscous, 80ml olive oil, 30g parmesan</li><li>1266 cal, 27g protein, 81g fat, 102g carbs</li></ul></span></span>
 		</div>
 		<div><div>Couscous</div><div id="couscous"></div></div>
 		<div><div>Olive oil</div><div id="olive"></div></div>
 		<div><div>Parmesan</div><div id="parmesan"></div></div>
 		<div>
 			<span ontouchstart class="ttip"><strong>Lunch</strong>
-			<span class="ttiptext"><strong>Instructions:</strong> Eat the bars, eat the rest. Make your own bars for better taste and less trash.</span></span>
+			<span class="ttiptext"><strong>Instructions:</strong> Eat the bars, eat the rest. Make your own bars for better taste and less trash.<ul><li>150g bars, 20g peanuts, 10g raisins, 10g seeds</li><li>737 cal, 29g protein, 28g fat, 141g carbs</li></ul></span></span>
 		</div>
 		<div><div>50g bars</div><div id="bars"></div></div>
 		<div><div>Raisins</div><div id="raisins"></div></div>
@@ -140,14 +141,16 @@
 		<div><div>Other seeds</div><div id="seeds"></div></div>
 		<div>
 			<span ontouchstart class="ttip"><strong>Breakfast</strong>
-			<span class="ttiptext"><strong>Instructions:</strong> Boil up water with a touch of salt, raisins, milk powder and whatever else you like with oats. Once boiling, throw in oats, stir, remove heat, keep stirring, and enjoy.</span></span>
+			<span class="ttiptext"><strong>Instructions:</strong> Boil up water with a touch of salt, raisins, milk powder and whatever else you like with oats. Once boiling, throw in oats, stir, remove heat, keep stirring, and enjoy.<ul><li>100g oats, 20g raisins, 20g milk powder</li><li>555 cal, 17g protein, 13g fat, 95g carbs</li></ul></span></span>
 		</div>
 		<div><div>Oats</div><div id="oats"></div></div>
 		<div><div>Milk powder</div><div id="milk"></div></div>
+		<br>
+		<div><div><strong>Gas</strong></div><div id="gas"></div></div>
 	</div>
 	<div class="bottom">
 	<p>Ditch the milk powder if it's not your thing. Mix about 1/3 of the raisins into your oats, and feel free to substitute another dried fruit. Don't forget to take salt and pepper. Pro tip: pack all of these into sealable plastic bags so you're not carrying trash around with you.</p>
-	<p>*Including first and last. It is assumed that no breakfast is needed for the first day, and no dinner is needed for the last.</p>
+	<p>Days should include first and last. It is assumed that no breakfast is needed for the first day, and no dinner is needed for the last. Gas calculation assumes both oats and couscous are followed by a bit of tea, that you're using an efficient stove, and that no other cooking is needed. Be conservative.</p>
 	</div>
 	<script>
 		const items = {
@@ -160,6 +163,7 @@
 			"seeds": {"amnt": 10, "type": "lunch", "unit": "g"},
 			"oats": {"amnt": 100, "type": "breakfast", "unit": "g"},
 			"milk": {"amnt": 20, "type": "breakfast", "unit": "g"},
+			"gas": {"amnt": 18, "type": "dinner", "unit": "g"}
 		}
 
 		function calc() {
