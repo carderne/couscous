@@ -3,15 +3,15 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="viewport" content="initial-scale = 1.0,maximum-scale = 1.0">
-<title>How Much Cous Cous</title>
+<title>How Much Couscous</title>
 
 <meta name="description" content="Calculate how much food you need to take on your next hiking/climbing trip.">
-<meta property="og:site_name" content="How Much Cous Cous">
+<meta property="og:site_name" content="How Much Couscous">
 <meta property="og:type" content="website">
-<meta property="og:title" content="How Much Cous Cous">
+<meta property="og:title" content="How Much Couscous">
 <meta property="og:description" content="Calculate how much food you need to take on your next hiking/climbing trip.">
 <meta property="og:url" content="/">
-<meta name="twitter:title" content="How Much Cous Cous">
+<meta name="twitter:title" content="How Much Couscous">
 <meta name="twitter:description" content="Calculate how much food you need to take on your next hiking/climbing trip.">
 <meta name="twitter:url" content="/">
 
@@ -53,6 +53,30 @@
 		padding-bottom: 100px;
 	}
 	
+	.ttip {
+		position: relative;
+		display: inline-block;
+	}
+	
+	.ttiptext {
+		visibility: hidden;
+		width: 150%;
+		background-color: #191919;
+		color: #fff;
+		text-align: left;
+		padding: 5px 5px;
+		border-radius: 6px;
+		opacity: 0.9;
+		position: absolute;
+		z-index: 300;
+		top: -5px;
+		left: 25%; 
+	}
+	
+	.ttip:hover .ttiptext, .switch:hover .ttiptext {
+		visibility: visible;
+	}
+
 	@media (min-width: 1024px) {
 		body {
 			width: 700px;
@@ -61,12 +85,17 @@
 		.bottom {
 			padding-bottom: 10px;
 		}
+
+		.ttiptext {
+			width: 350px;
+		}
 	}
+
 </style>
 </head>
 <body onload="calc()">
-	<h1>How Much Cous Cous</h1>
-	<p>Use this to calculate how much cous cous, oats and parmesan to pack for your camping trip. Use this for delicious food when weight and simplicity matter.</p>
+	<h2>How Much Couscous</h2>
+	<p>Couscous and oats are the best for climbing and hiking when weight and simplicity matter. Just ask <a href="https://vimeo.com/groups/endlessoutdooradventure/videos/32746681">these badasses</a>. This calculator will tell you how much to take. Couscous and oats are delicious, but if weight doesn't matter as much, follow your heart and ignore this calculator.</p>
 	<div class="main">
 		<div class="selectors">
 			<select id="people" onchange="calc()">
@@ -92,21 +121,30 @@
 				<option value=13>Thirteen</option>
 			</select>
 		</div>
-		<div><strong>Dinner</strong></div>
-		<div><div>Cous cous</div><div id="couscous"></div></div>
+		<div>
+			<span class="ttip"><strong>Dinner</strong>
+			<span class="ttiptext"><strong>Instructions:</strong> Boil up water (1:1 with couscous) with salt and olive oil. Once boiling, throw in couscous and sliced parmesan, cover, and remote heat. Leave covered for five minutes then enjoy.</span></span>
+		</div>
+		<div><div>Couscous</div><div id="couscous"></div></div>
 		<div><div>Olive oil</div><div id="olive"></div></div>
 		<div><div>Parmesan</div><div id="parmesan"></div></div>
-		<div><strong>Lunch</strong></div>
+		<div>
+			<span class="ttip"><strong>Lunch</strong>
+			<span class="ttiptext"><strong>Instructions:</strong> Eat the bars, eat the rest. Make your own bars for better taste and less trash.</span></span>
+		</div>
 		<div><div>50g bars</div><div id="bars"></div></div>
 		<div><div>Raisins</div><div id="raisins"></div></div>
 		<div><div>Peanuts</div><div id="peanuts"></div></div>
 		<div><div>Other seeds</div><div id="seeds"></div></div>
-		<div><strong>Breakfast</strong></div>
+		<div>
+			<span class="ttip"><strong>Breakfast</strong>
+			<span class="ttiptext"><strong>Instructions:</strong> Boil up water with a touch of salt, raisins, milk powder and whatever else you like with oats. Once boiling, throw in oats, stir, remove heat, keep stirring, and enjoy.</span></span>
+		</div>
 		<div><div>Oats</div><div id="oats"></div></div>
 		<div><div>Milk powder</div><div id="milk"></div></div>
 	</div>
 	<div class="bottom">
-	<p>Ditch the milk powder if it's not your thing. Mix about 1/3 of your raisins into your oats, and feel free to substitute another dried fruit. Don't forget to take salt and pepper. Pro tip: pack all of these into sealable plastic bags so you're not carrying trash around with you.</p>
+	<p>Ditch the milk powder if it's not your thing. Mix about 1/3 of the raisins into your oats, and feel free to substitute another dried fruit. Don't forget to take salt and pepper. Pro tip: pack all of these into sealable plastic bags so you're not carrying trash around with you.</p>
 	<p>*Including first and last. It is assumed that no breakfast is needed for the first day, and no dinner is needed for the last.</p>
 	</div>
 	<script>
