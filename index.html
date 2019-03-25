@@ -73,7 +73,9 @@
 		left: 25%; 
 	}
 	
-	.ttip:hover .ttiptext, .switch:hover .ttiptext {
+	.ttip:hover .ttiptext,
+	.ttip:active .ttiptext,
+	.ttip:focus .ttiptext {
 		visibility: visible;
 	}
 
@@ -122,14 +124,14 @@
 			</select>
 		</div>
 		<div>
-			<span class="ttip"><strong>Dinner</strong>
+			<span ontouchstart class="ttip"><strong>Dinner</strong>
 			<span class="ttiptext"><strong>Instructions:</strong> Boil up water (1:1 with couscous) with salt and olive oil. Once boiling, throw in couscous and sliced parmesan, cover, and remote heat. Leave covered for five minutes then enjoy.</span></span>
 		</div>
 		<div><div>Couscous</div><div id="couscous"></div></div>
 		<div><div>Olive oil</div><div id="olive"></div></div>
 		<div><div>Parmesan</div><div id="parmesan"></div></div>
 		<div>
-			<span class="ttip"><strong>Lunch</strong>
+			<span ontouchstart class="ttip"><strong>Lunch</strong>
 			<span class="ttiptext"><strong>Instructions:</strong> Eat the bars, eat the rest. Make your own bars for better taste and less trash.</span></span>
 		</div>
 		<div><div>50g bars</div><div id="bars"></div></div>
@@ -137,7 +139,7 @@
 		<div><div>Peanuts</div><div id="peanuts"></div></div>
 		<div><div>Other seeds</div><div id="seeds"></div></div>
 		<div>
-			<span class="ttip"><strong>Breakfast</strong>
+			<span ontouchstart class="ttip"><strong>Breakfast</strong>
 			<span class="ttiptext"><strong>Instructions:</strong> Boil up water with a touch of salt, raisins, milk powder and whatever else you like with oats. Once boiling, throw in oats, stir, remove heat, keep stirring, and enjoy.</span></span>
 		</div>
 		<div><div>Oats</div><div id="oats"></div></div>
